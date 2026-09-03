@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://rx1vol1e5psa"]
+
+[ext_resource type="PackedScene" uid="uid://bneiliy27rdog" path="res://scenes/additional/array.tscn" id="1_uflon"]
+[ext_resource type="Script" uid="uid://c5c80ty5odnnk" path="res://scripts/array_ui/ui_array_spots.gd" id="2_ok0tp"]
+[ext_resource type="PackedScene" uid="uid://b604wxo0npuuw" path="res://scenes/additional/element_spot.tscn" id="3_uflon"]
+
+[node name="ArraySpots" unique_id=840071763 instance=ExtResource("1_uflon")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_ok0tp")
+element_prefab = ExtResource("3_uflon")

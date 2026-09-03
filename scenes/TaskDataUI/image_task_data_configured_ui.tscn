@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://qmnmufcfvay0"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_60v0w"]
+[ext_resource type="Script" uid="uid://bhhio62muu703" path="res://scripts/TaskDataUI/image_task_data_configured_ui.gd" id="2_60v0w"]
+[ext_resource type="PackedScene" uid="uid://bv0i6fkglke7u" path="res://scenes/TaskDataUI/spot_configurator_configured.tscn" id="3_60v0w"]
+[ext_resource type="PackedScene" uid="uid://0f3wf5yqeq7w" path="res://scenes/additional/choose_image.tscn" id="4_f4gjv"]
+[ext_resource type="PackedScene" uid="uid://c1dqfj7ce0h0a" path="res://scenes/additional/array_dec_spot_conf.tscn" id="5_t2rdf"]
+[ext_resource type="PackedScene" uid="uid://dqf1jc7hxtjwr" path="res://scenes/additional/check_box.tscn" id="6_aw4ic"]
+
+[node name="ImageTaskDataCONF" type="Control" unique_id=956394483 node_paths=PackedStringArray("data", "choose_image", "main_container", "choice_counter", "points_spin_box", "penalty_spin_box", "one_shot_toggle", "show_everything_toggle", "name_text_line")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_60v0w")
+script = ExtResource("2_60v0w")
+data = NodePath("VBoxContainer/ScrollContainer/Options/ArrayIMG")
+choose_image = NodePath("VBoxContainer/ScrollContainer/Options/ChooseImage/ImageExplorer")
+main_container = NodePath("VBoxContainer")
+configurator_prefab = ExtResource("3_60v0w")
+choice_counter = NodePath("VBoxContainer/ScrollContainer/Options/AnswerCount/SpinBox")
+points_spin_box = NodePath("VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/Points")
+penalty_spin_box = NodePath("VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/Penalty")
+one_shot_toggle = NodePath("VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/OneShot")
+show_everything_toggle = NodePath("VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/ShowEverything")
+name_text_line = NodePath("VBoxContainer/Panel/Names/Name")
+metadata/_custom_type_script = "uid://bhhio62muu703"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2080493751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1318067165]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Names" type="HBoxContainer" parent="VBoxContainer/Panel" unique_id=1247030799]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Type" type="Label" parent="VBoxContainer/Panel/Names" unique_id=644922319]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+tooltip_text = "Тип задания"
+mouse_filter = 1
+text = "[ГЕНЕРАТОР] Изображение"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="LineEdit" parent="VBoxContainer/Panel/Names" unique_id=416562006]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Название задания..."
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=271467742]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="Options" type="VBoxContainer" parent="VBoxContainer/ScrollContainer" unique_id=1817949590]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/Options" unique_id=1905512484]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+text = "Параметры задания"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChooseImage" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Options" unique_id=1588608806]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/Options/ChooseImage" unique_id=1611028235]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Изображение"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImageExplorer" parent="VBoxContainer/ScrollContainer/Options/ChooseImage" unique_id=1705251148 instance=ExtResource("4_f4gjv")]
+layout_mode = 2
+
+[node name="AnswerCount" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Options" unique_id=187259315]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/Options/AnswerCount" unique_id=1888020985]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Количество вариантов"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/ScrollContainer/Options/AnswerCount" unique_id=1406295307]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 2.0
+max_value = 8.0
+value = 2.0
+rounded = true
+
+[node name="Label3" type="Label" parent="VBoxContainer/ScrollContainer/Options" unique_id=1521093497]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+tooltip_text = "🛈 Эти изображения будут находится поверх основного изображения"
+mouse_filter = 1
+text = "Данные"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrayIMG" parent="VBoxContainer/ScrollContainer/Options" unique_id=840071763 instance=ExtResource("5_t2rdf")]
+custom_minimum_size = Vector2(0, 500)
+custom_maximum_size = Vector2(-1, 500)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/Options" unique_id=244761160]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+text = "Прочее"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskOptions" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Options" unique_id=1192016136]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OptionNames" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/Options/TaskOptions" unique_id=1111762984]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Points" type="Label" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionNames" unique_id=476601233]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Баллы за правильный ответ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Penalty" type="Label" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionNames" unique_id=120106007]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Штраф за неправильный ответ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OneShot" type="Label" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionNames" unique_id=1635305549]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+text = "одна попытка на задание"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowEverything" type="Label" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionNames" unique_id=1697294680]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+text = "показать ответы после конца задания"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionUI" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/Options/TaskOptions" unique_id=1432496682]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Points" type="SpinBox" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI" unique_id=1152274409]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Penalty" type="SpinBox" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI" unique_id=884163921]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+min_value = -1.0
+max_value = 20.0
+rounded = true
+
+[node name="OneShot" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI" unique_id=2034904013 instance=ExtResource("6_aw4ic")]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 3
+
+[node name="ShowEverything" parent="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI" unique_id=1728141344 instance=ExtResource("6_aw4ic")]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 3
+
+[connection signal="text_submitted" from="VBoxContainer/Panel/Names/Name" to="." method="_on_name_submitted"]
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/Options/AnswerCount/SpinBox" to="." method="_on_choice_count_changed"]
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/Points" to="." method="_on_points_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/Penalty" to="." method="_on_penalty_value_changed"]
+[connection signal="toggled" from="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/OneShot" to="." method="_on_one_shot_toggled"]
+[connection signal="toggled" from="VBoxContainer/ScrollContainer/Options/TaskOptions/OptionUI/ShowEverything" to="." method="_on_show_everything_toggled"]

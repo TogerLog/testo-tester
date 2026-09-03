@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://h7ct20ve02md"]
+
+[ext_resource type="PackedScene" uid="uid://bneiliy27rdog" path="res://scenes/additional/array.tscn" id="1_8l4p2"]
+[ext_resource type="Script" uid="uid://mvgt7xuvd8hk" path="res://scripts/array_ui/ui_array_pair.gd" id="2_8l4p2"]
+[ext_resource type="PackedScene" uid="uid://cju6kkcotrelq" path="res://scenes/additional/pair_edit.tscn" id="3_ulhiv"]
+
+[node name="Array" unique_id=840071763 instance=ExtResource("1_8l4p2")]
+script = ExtResource("2_8l4p2")
+element_prefab = ExtResource("3_ulhiv")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b4q2qd1ff62wl"]
+
+[ext_resource type="PackedScene" uid="uid://dqf1jc7hxtjwr" path="res://scenes/additional/check_box.tscn" id="1_30eou"]
+[ext_resource type="Script" uid="uid://cgiacfshpbh7l" path="res://scripts/additional/task_button.gd" id="1_sr8u0"]
+
+[node name="TaskButton" type="HBoxContainer" unique_id=1544166534 node_paths=PackedStringArray("button", "check_box")]
+script = ExtResource("1_sr8u0")
+button = NodePath("Button")
+check_box = NodePath("CheckBox")
+
+[node name="CheckBox" parent="." unique_id=2034904013 instance=ExtResource("1_30eou")]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Вкл/Выкл задание в тест"
+button_pressed = true
+
+[node name="Button" type="Button" parent="." unique_id=1854251834]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+text = "Задание"
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

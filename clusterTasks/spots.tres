@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="SpotTaskDataConfigured" format=3 uid="uid://b80xn7wh8gsx3"]
+
+[ext_resource type="Texture2D" uid="uid://c7j48nbsw212h" path="res://sprites/rand.png" id="1_m4ime"]
+[ext_resource type="Script" uid="uid://ckognllr37ra2" path="res://scripts/TaskConfiguredData/spot_image_task_data_configured.gd" id="1_t0uba"]
+[ext_resource type="Script" uid="uid://dm165hbkqwb5k" path="res://scripts/additional/spot.gd" id="2_m4ime"]
+[ext_resource type="Script" uid="uid://c21xad5q1vcfc" path="res://scripts/additional/pair.gd" id="2_n7tfb"]
+
+[sub_resource type="Resource" id="Resource_vxglm"]
+script = ExtResource("2_n7tfb")
+first_val = "Передний вид скелета"
+second_val = "Скелет 1"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_2f3dj"]
+script = ExtResource("2_n7tfb")
+first_val = "Задний вид скелета"
+second_val = "Скелет 2"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_yq6so"]
+script = ExtResource("2_n7tfb")
+first_val = "Передний вид мышц"
+second_val = "Мышцы 1"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_fv21b"]
+script = ExtResource("2_n7tfb")
+first_val = "Задний вид мышц"
+second_val = "Мышцы 2"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_t0uba"]
+script = ExtResource("2_m4ime")
+position = Vector2(0.14, 0.4)
+answer = "Скелет 1"
+metadata/_custom_type_script = "uid://dm165hbkqwb5k"
+
+[sub_resource type="Resource" id="Resource_m4ime"]
+script = ExtResource("2_m4ime")
+position = Vector2(0.4, 0.4)
+answer = "Скелет 2"
+metadata/_custom_type_script = "uid://dm165hbkqwb5k"
+
+[sub_resource type="Resource" id="Resource_n7tfb"]
+script = ExtResource("2_m4ime")
+position = Vector2(0.64, 0.4)
+answer = "Мышцы 1"
+metadata/_custom_type_script = "uid://dm165hbkqwb5k"
+
+[sub_resource type="Resource" id="Resource_n8sfw"]
+script = ExtResource("2_m4ime")
+position = Vector2(0.9, 0.4)
+answer = "Мышцы 2"
+metadata/_custom_type_script = "uid://dm165hbkqwb5k"
+
+[resource]
+script = ExtResource("1_t0uba")
+questions = Array[ExtResource("2_n7tfb")]([SubResource("Resource_vxglm"), SubResource("Resource_2f3dj"), SubResource("Resource_yq6so"), SubResource("Resource_fv21b")])
+spots = Array[ExtResource("2_m4ime")]([SubResource("Resource_t0uba"), SubResource("Resource_m4ime"), SubResource("Resource_n7tfb"), SubResource("Resource_n8sfw")])
+image = ExtResource("1_m4ime")
+one_shot = true
+metadata/_custom_type_script = "uid://ckognllr37ra2"

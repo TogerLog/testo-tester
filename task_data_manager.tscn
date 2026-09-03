@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bev82kj3knxxb"]
+
+[ext_resource type="Script" uid="uid://cjfc3bitanpaq" path="res://scripts/task_data_manager.gd" id="1_enfe4"]
+[ext_resource type="PackedScene" uid="uid://b2hpdlm3h4lu8" path="res://scenes/TaskDataUI/NONE_task_data_ui.tscn" id="2_knjgy"]
+[ext_resource type="PackedScene" uid="uid://cj3mkjaajtpkq" path="res://scenes/Task/none_task.tscn" id="3_8l2hx"]
+[ext_resource type="PackedScene" uid="uid://djsat7m8qxpge" path="res://scenes/TaskDataUI/question_task_data_configured.tscn" id="3_vimey"]
+[ext_resource type="PackedScene" uid="uid://cq1f6pw2nv8yk" path="res://scenes/TaskDataUI/question_task_data_ui.tscn" id="4_bn3sm"]
+[ext_resource type="PackedScene" uid="uid://b1bmdegp7msx5" path="res://scenes/Task/question_task.tscn" id="4_o2gjg"]
+[ext_resource type="PackedScene" uid="uid://dlh5dpct1upk4" path="res://scenes/TaskDataUI/image_task_data_ui.tscn" id="5_bn3sm"]
+[ext_resource type="PackedScene" uid="uid://dtaswovxl5o0j" path="res://scenes/Task/chronology_task.tscn" id="5_ccuig"]
+[ext_resource type="PackedScene" uid="uid://qmnmufcfvay0" path="res://scenes/TaskDataUI/image_task_data_configured_ui.tscn" id="6_siq3q"]
+[ext_resource type="PackedScene" uid="uid://bklmsbgnk3gav" path="res://scenes/Task/end_task.tscn" id="6_vimey"]
+[ext_resource type="PackedScene" uid="uid://4bnpandhdiu8" path="res://scenes/Task/image_task.tscn" id="7_bn3sm"]
+[ext_resource type="PackedScene" uid="uid://b7oyls0t72tj6" path="res://scenes/TaskDataUI/line_task_data_ui.tscn" id="7_yhj2p"]
+[ext_resource type="PackedScene" uid="uid://ct44xl8ao8gev" path="res://scenes/TaskDataUI/line_task_data_configured_ui.tscn" id="8_80f8w"]
+[ext_resource type="PackedScene" uid="uid://d0sni2axf84dc" path="res://scenes/Task/link_task.tscn" id="8_siq3q"]
+[ext_resource type="PackedScene" uid="uid://kkrnyognplgw" path="res://scenes/TaskDataUI/chrono_task_data_ui.tscn" id="9_0km80"]
+[ext_resource type="PackedScene" uid="uid://c70tbh5r4dt7w" path="res://scenes/Task/spot_task.tscn" id="9_yhj2p"]
+[ext_resource type="PackedScene" uid="uid://ddgvv8blxba2l" path="res://scenes/TaskDataUI/chrono_task_data_configured_ui.tscn" id="10_pu2c0"]
+[ext_resource type="PackedScene" uid="uid://spu4hx385eof" path="res://scenes/TaskDataUI/spot_task_data_ui.tscn" id="11_nsho4"]
+[ext_resource type="PackedScene" uid="uid://b7pqkuskmdvas" path="res://scenes/TaskDataUI/spot_task_data_configured.tscn" id="12_y7dj8"]
+
+[node name="TaskDataManager" type="Node" unique_id=1357677951]
+script = ExtResource("1_enfe4")
+type_conf_constructors = Dictionary[String, PackedScene]({
+"ChronoTask": ExtResource("9_0km80"),
+"ChronoTaskConfigured": ExtResource("10_pu2c0"),
+"ImageTask": ExtResource("5_bn3sm"),
+"ImageTaskConfigured": ExtResource("6_siq3q"),
+"LineTask": ExtResource("7_yhj2p"),
+"LineTaskConfigured": ExtResource("8_80f8w"),
+"NONE": ExtResource("2_knjgy"),
+"QuestionTask": ExtResource("4_bn3sm"),
+"QuestionTaskConfigured": ExtResource("3_vimey"),
+"SpotTask": ExtResource("11_nsho4"),
+"SpotTaskConfigured": ExtResource("12_y7dj8")
+})
+type_task_constructors = Dictionary[String, PackedScene]({
+"ChronoTask": ExtResource("5_ccuig"),
+"EndTask": ExtResource("6_vimey"),
+"ImageTask": ExtResource("7_bn3sm"),
+"LineTask": ExtResource("8_siq3q"),
+"NONE": ExtResource("3_8l2hx"),
+"QuestionTask": ExtResource("4_o2gjg"),
+"SpotTask": ExtResource("9_yhj2p")
+})
+type_label = Dictionary[String, String]({
+"ChronoTask": "Задание с последовательностью",
+"EndTask": "Тест завершён",
+"ImageTask": "Задание с изображением",
+"LineTask": "Задание на соответствие",
+"NONE": "ТИП ЗАДАНИЯ НЕ НАСТРОЕН",
+"QuestionTask": "Задание с вопросом",
+"SpotTask": "Задание с областью"
+})
+type_description = Dictionary[String, String]({
+"ChronoTask": "Задание на последовательность",
+"ChronoTaskConfigured": "ГЕНЕРАТОР Задании на последовательность",
+"ImageTask": "Задание с изображением",
+"ImageTaskConfigured": "ГЕНЕРАТОР Задании с изображением",
+"LineTask": "Задание на соответствие",
+"LineTaskConfigured": "ГЕНЕРАТОР Задании на соответствие",
+"QuestionTask": "Задание с вопросом",
+"QuestionTaskConfigured": "ГЕНЕРАТОР Задании с вопросом",
+"SpotTask": "Задание с точкой ответа",
+"SpotTaskConfigured": "ГЕНЕРАТОР Задании с точкой ответа"
+})
+type_id = Array[String](["ImageTaskConfigured", "ImageTask", "QuestionTask", "QuestionTaskConfigured", "LineTask", "LineTaskConfigured", "ChronoTask", "ChronoTaskConfigured", "SpotTask", "SpotTaskConfigured"])

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="LinkTaskDataConfigured" format=3 uid="uid://dxncbjv80kob5"]
+
+[ext_resource type="Script" uid="uid://c21xad5q1vcfc" path="res://scripts/additional/pair.gd" id="1_k3103"]
+[ext_resource type="Script" uid="uid://c57vqntnw2lvy" path="res://scripts/TaskConfiguredData/link_task_data_configured.gd" id="2_0raks"]
+
+[sub_resource type="Resource" id="Resource_163tj"]
+script = ExtResource("1_k3103")
+first_val = "1"
+second_val = "1"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_dsckl"]
+script = ExtResource("1_k3103")
+first_val = "2"
+second_val = "4"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_dwifp"]
+script = ExtResource("1_k3103")
+first_val = "3"
+second_val = "9"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_mabl7"]
+script = ExtResource("1_k3103")
+first_val = "4"
+second_val = "16"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_h0uyj"]
+script = ExtResource("1_k3103")
+first_val = "5"
+second_val = "25"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_clgdl"]
+script = ExtResource("1_k3103")
+first_val = "6"
+second_val = "36"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[sub_resource type="Resource" id="Resource_k3103"]
+script = ExtResource("1_k3103")
+first_val = "7"
+second_val = "49"
+metadata/_custom_type_script = "uid://c21xad5q1vcfc"
+
+[resource]
+script = ExtResource("2_0raks")
+pair_count = Array[int]([6, 1])
+pairs = Array[ExtResource("1_k3103")]([SubResource("Resource_163tj"), SubResource("Resource_dsckl"), SubResource("Resource_dwifp"), SubResource("Resource_mabl7"), SubResource("Resource_h0uyj"), SubResource("Resource_clgdl"), SubResource("Resource_k3103")])
+hint = "Число -> Его квадрат"
+one_shot = true
+metadata/_custom_type_script = "uid://c57vqntnw2lvy"

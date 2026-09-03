@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dqf1jc7hxtjwr"]
+
+[ext_resource type="Texture2D" uid="uid://bq7tcqgx1hqyy" path="res://sprites/GuiUnchecked.svg" id="1_4fih0"]
+[ext_resource type="Texture2D" uid="uid://b5ci1m7fa3tmw" path="res://sprites/GuiChecked.svg" id="2_0enwe"]
+
+[node name="CheckBox" type="TextureButton" unique_id=2034904013]
+offset_right = 30.0
+offset_bottom = 30.0
+toggle_mode = true
+texture_normal = ExtResource("1_4fih0")
+texture_pressed = ExtResource("2_0enwe")
+ignore_texture_size = true
+stretch_mode = 5

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cj3mkjaajtpkq"]
+
+[ext_resource type="Script" uid="uid://dr33bct2qv2b2" path="res://scripts/Tasks/task_none.gd" id="1_0r6vh"]
+[ext_resource type="LabelSettings" uid="uid://cpl2fl74qxmmu" path="res://resources/huge_text.tres" id="1_te7r6"]
+[ext_resource type="PackedScene" uid="uid://dsfxw0akun2k3" path="res://scenes/additional/simple_button.tscn" id="3_6cpcl"]
+
+[node name="Control" type="Control" unique_id=1101976702 node_paths=PackedStringArray("button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0r6vh")
+button = NodePath("SimpleButton")
+
+[node name="Label" type="Label" parent="." unique_id=170265445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ТИП ЗАДАНИЯ 
+НЕ НАСТРОЕН 
+СООБЩИТЕ ОБ ОШИБКЕ"
+label_settings = ExtResource("1_te7r6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SimpleButton" parent="." unique_id=1600989346 instance=ExtResource("3_6cpcl")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -250.0
+offset_right = 185.0
+offset_bottom = -149.99988
+grow_horizontal = 2
+grow_vertical = 0
+text = "ПРОПУСТИТЬ ЗАДАНИЕ"
+
+[connection signal="pressed" from="SimpleButton" to="." method="SKIP"]

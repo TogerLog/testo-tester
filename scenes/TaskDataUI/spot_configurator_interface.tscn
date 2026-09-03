@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://tt7colqfpj7a"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_ap53e"]
+[ext_resource type="Script" uid="uid://dbbt00y8ehowy" path="res://scripts/TaskDataUI/spot_configurator_interface.gd" id="2_nkvmn"]
+[ext_resource type="Texture2D" uid="uid://d2x120n7aed6j" path="res://sprites/no image.png" id="3_slm1y"]
+
+[node name="SpotConfigurator" type="Panel" unique_id=1650806840 node_paths=PackedStringArray("main_image", "target_image", "positioner", "position_x", "position_y")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ap53e")
+script = ExtResource("2_nkvmn")
+main_image = NodePath("VBoxContainer/HBoxContainer/View/Panel/MainImage")
+target_image = NodePath("VBoxContainer/HBoxContainer/View/Panel/Button/TargetImage")
+positioner = NodePath("VBoxContainer/HBoxContainer/View/Panel/Button")
+position_x = NodePath("VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/x/SpinBox")
+position_y = NodePath("VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/y/SpinBox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=671165127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1898239895]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Настройка дополнительного объекта"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1404178682]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="LeftMenu" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=272273480]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMenu" unique_id=639876052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Position" type="Label" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer" unique_id=532057005]
+layout_mode = 2
+text = "Позиция"
+horizontal_alignment = 1
+
+[node name="x" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer" unique_id=1080934439]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/x" unique_id=553789038]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X"
+horizontal_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/x" unique_id=238416423]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+max_value = 1.0
+step = 0.01
+
+[node name="y" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer" unique_id=1298068489]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/y" unique_id=384113912]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Y"
+horizontal_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/y" unique_id=1893091516]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+max_value = 1.0
+step = 0.01
+
+[node name="View" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=149584864]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/View" unique_id=111032784]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.97
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainImage" type="TextureRect" parent="VBoxContainer/HBoxContainer/View/Panel" unique_id=861550606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_slm1y")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/View/Panel" unique_id=1064541814]
+self_modulate = Color(7.133, 7.133, 7.133, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="TargetImage" type="TextureRect" parent="VBoxContainer/HBoxContainer/View/Panel/Button" unique_id=1365468297]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_slm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1990996373]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel" unique_id=119732158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Accept" type="Button" parent="VBoxContainer/Panel/HBoxContainer" unique_id=1680924249]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Применить"
+
+[node name="Cancel" type="Button" parent="VBoxContainer/Panel/HBoxContainer" unique_id=2065916484]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Отмена"
+
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/x/SpinBox" to="." method="_on_position_x_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/LeftMenu/VBoxContainer/y/SpinBox" to="." method="_on_position_y_changed"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/View/Panel/Button" to="." method="on_positioner_down"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/View/Panel/Button" to="." method="on_positioner_up"]
+[connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/Accept" to="." method="accept_changes"]
+[connection signal="pressed" from="VBoxContainer/Panel/HBoxContainer/Cancel" to="." method="cancel"]

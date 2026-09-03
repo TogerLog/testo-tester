@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://bhuy6ugt0h77k"]
+
+[ext_resource type="FontFile" uid="uid://dmhtc1lalfm1x" path="res://fonts/calibri.ttf" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dwe60nue7x48x" path="res://sprites/top.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://csbqds2jjgrnl" path="res://sprites/exit.png" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://tjp4sq4w335q" path="res://sprites/exitPress.png" id="4_tipki"]
+[ext_resource type="LabelSettings" uid="uid://cyp06wh4u08e2" path="res://resources/text.tres" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dubsdwgouo6mi" path="res://scenes/controller.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://db4my1v74tcjx" path="res://scripts/task_data.gd" id="7_tipki"]
+[ext_resource type="Script" uid="uid://c6dotxdwo3cqc" path="res://scripts/Test.gd" id="14_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://bc0ywnd5a75p4" path="res://sprites/testo.png" id="19_gqmmt"]
+[ext_resource type="Script" uid="uid://oklg42ccdt2d" path="res://scripts/main_menu.gd" id="19_jscy8"]
+[ext_resource type="PackedScene" uid="uid://dsfxw0akun2k3" path="res://scenes/additional/simple_button.tscn" id="20_pm3ni"]
+[ext_resource type="LabelSettings" uid="uid://cpl2fl74qxmmu" path="res://resources/huge_text.tres" id="20_yc10j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tekt2"]
+bg_color = Color(0.5251013, 0.5251013, 0.5251012, 1)
+border_width_top = 100
+border_color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.15312043, 0.15064108, 0.15064111, 1)
+shadow_size = 20
+
+[sub_resource type="Theme" id="Theme_choun"]
+Button/font_sizes/font_size = 42
+Button/fonts/font = ExtResource("1_tbgi4")
+Button/styles/normal = null
+Label/colors/font_outline_color = Color(0.28627452, 0.28235295, 0.28235295, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.554)
+Label/constants/outline_size = 16
+Label/font_sizes/font_size = 42
+Label/fonts/font = ExtResource("1_tbgi4")
+Panel/styles/panel = SubResource("StyleBoxFlat_tekt2")
+
+[sub_resource type="Resource" id="Resource_jbj1t"]
+script = ExtResource("14_dp3eg")
+use_percent = true
+metadata/_custom_type_script = "uid://c6dotxdwo3cqc"
+
+[node name="Main" type="Node" unique_id=514350628]
+
+[node name="Quiz" type="CanvasLayer" parent="." unique_id=1771670378]
+visible = false
+
+[node name="TOP" type="Control" parent="Quiz" unique_id=287304775]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_choun")
+
+[node name="TopPanel" type="TextureRect" parent="Quiz/TOP" unique_id=1429565944]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+texture = ExtResource("2_tefeu")
+expand_mode = 1
+
+[node name="ExitButton" type="TextureButton" parent="Quiz/TOP/TopPanel" unique_id=720587523]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.5
+offset_top = -48.5
+offset_right = 106.5
+offset_bottom = 31.5
+grow_vertical = 2
+texture_normal = ExtResource("3_o6xl0")
+texture_pressed = ExtResource("4_tipki")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MainLabel" type="Label" parent="Quiz/TOP/TopPanel" unique_id=555534191]
+custom_minimum_size = Vector2(-1, -1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "РАНДОМНЫЙ ТЕКСТ
+РАНДОМНЫЙ ТЕКСТ"
+label_settings = ExtResource("5_85g3d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskCounter" type="Label" parent="Quiz/TOP/TopPanel" unique_id=975472043]
+custom_minimum_size = Vector2(-1, -1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -21.5
+offset_bottom = 21.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0.5)
+offset_transform_enabled = true
+offset_transform_position = Vector2(-60, -30)
+text = "10/20"
+label_settings = ExtResource("5_85g3d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Quiz/TOP/TopPanel" unique_id=1277014273]
+custom_minimum_size = Vector2(-1, -1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -21.5
+offset_bottom = 21.5
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0.5)
+offset_transform_enabled = true
+offset_transform_position = Vector2(-60, 30)
+text = "Счёт 10"
+label_settings = ExtResource("5_85g3d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CONTROLLER" parent="Quiz" unique_id=331434478 node_paths=PackedStringArray("main_label", "score_label", "task_label") instance=ExtResource("6_tefeu")]
+main_label = NodePath("../TOP/TopPanel/MainLabel")
+score_label = NodePath("../TOP/TopPanel/Score")
+task_label = NodePath("../TOP/TopPanel/TaskCounter")
+penalty = 0
+
+[node name="MainMenu" type="CanvasLayer" parent="." unique_id=292903009 node_paths=PackedStringArray("controller", "mainUI", "quizUI")]
+script = ExtResource("19_jscy8")
+controller = NodePath("../Quiz/CONTROLLER")
+test_data = SubResource("Resource_jbj1t")
+mainUI = NodePath(".")
+quizUI = NodePath("../Quiz")
+
+[node name="SimpleButton" parent="MainMenu" unique_id=1600989346 instance=ExtResource("20_pm3ni")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
+offset_top = 737.0
+offset_right = 185.0
+offset_bottom = 837.0
+size_flags_vertical = 4
+text = "Начать"
+
+[node name="SimpleButton2" parent="MainMenu" unique_id=360354119 instance=ExtResource("20_pm3ni")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
+offset_top = 875.0
+offset_right = 185.0
+offset_bottom = 975.0
+size_flags_vertical = 4
+text = "Редактор"
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=662494226]
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.4
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_gqmmt")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MainMenu" unique_id=1331493203]
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+text = "Тесто тестер"
+label_settings = ExtResource("20_yc10j")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Quiz/TOP/TopPanel/ExitButton" to="MainMenu" method="return_menu"]
+[connection signal="pressed" from="MainMenu/SimpleButton" to="MainMenu" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/SimpleButton2" to="MainMenu" method="_on_creator_pressed"]

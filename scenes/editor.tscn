@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://biii0do1yu1hg"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_b1cmn"]
+[ext_resource type="Script" uid="uid://c7o72umyhr5tw" path="res://scripts/editor.gd" id="1_ba0ut"]
+[ext_resource type="PackedScene" uid="uid://b4q2qd1ff62wl" path="res://scenes/additional/task_button.tscn" id="2_pxqd5"]
+[ext_resource type="PackedScene" uid="uid://cfeiq6tuap3h8" path="res://scenes/TaskDataUI/global_options.tscn" id="3_q68jb"]
+
+[node name="Editor" type="CanvasLayer" unique_id=1417604139 node_paths=PackedStringArray("task_buttons_parent", "ui_parent", "delete_button", "new_button")]
+script = ExtResource("1_ba0ut")
+task_button_prefab = ExtResource("2_pxqd5")
+task_buttons_parent = NodePath("Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/ScrollTasks/TaskList")
+ui_parent = NodePath("Panel/Control/MarginContainer/VBoxContainer/BottomMenu/TaskConfigurtion")
+delete_button = NodePath("Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks/HBoxContainer/Delete")
+new_button = NodePath("Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks/HBoxContainer/New")
+global_settings = ExtResource("3_q68jb")
+theme = ExtResource("1_b1cmn")
+
+[node name="Panel" type="Panel" parent="." unique_id=2114803714]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("1_b1cmn")
+
+[node name="Control" type="Control" parent="Panel" unique_id=1241016698]
+layout_mode = 1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.99
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/Control" unique_id=679373075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Control/MarginContainer" unique_id=1647463946]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Control/MarginContainer/VBoxContainer" unique_id=1837812513]
+layout_mode = 2
+text = "Конструктор тестов"
+
+[node name="Panel" type="Panel" parent="Panel/Control/MarginContainer/VBoxContainer" unique_id=1901892266]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopMenu" type="HBoxContainer" parent="Panel/Control/MarginContainer/VBoxContainer/Panel" unique_id=1925726452]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu" unique_id=401961353]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+text = "Выход"
+
+[node name="New" type="Button" parent="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu" unique_id=2009527319]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+text = "Новый тест"
+
+[node name="Save" type="Button" parent="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu" unique_id=897368217]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+text = "Сохранить"
+
+[node name="Load" type="Button" parent="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu" unique_id=687708054]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
+text = "Загрузить"
+
+[node name="Options" type="Button" parent="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu" unique_id=1254496950]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Настройки теста"
+
+[node name="BottomMenu" type="HBoxContainer" parent="Panel/Control/MarginContainer/VBoxContainer" unique_id=929714837]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 11.0
+
+[node name="Tasks" type="Panel" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu" unique_id=100775673]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+
+[node name="LeftMenu" type="VBoxContainer" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks" unique_id=948867537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tasks" type="VBoxContainer" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu" unique_id=327062598]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks" unique_id=1527339541]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Задания"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks" unique_id=1643273961]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1, 2)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks" unique_id=1282147758]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="New" type="MenuButton" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks/HBoxContainer" unique_id=1394492433]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Создать"
+flat = false
+
+[node name="Delete" type="Button" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks/HBoxContainer" unique_id=1873313766]
+custom_minimum_size = Vector2(0, 83)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Удалить"
+autowrap_mode = 2
+
+[node name="ScrollTasks" type="ScrollContainer" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu" unique_id=1837597539]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="TaskList" type="VBoxContainer" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/ScrollTasks" unique_id=1573905978]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TaskConfigurtion" type="Panel" parent="Panel/Control/MarginContainer/VBoxContainer/BottomMenu" unique_id=2101166709]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu/New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/Panel/TopMenu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks/HBoxContainer/New" to="." method="new_button_pressed"]
+[connection signal="pressed" from="Panel/Control/MarginContainer/VBoxContainer/BottomMenu/Tasks/LeftMenu/Tasks/HBoxContainer/Delete" to="." method="delete_task"]

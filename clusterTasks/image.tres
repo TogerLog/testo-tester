@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="ImageTaskDataConfigured" format=3 uid="uid://x3qvqktuvgpv"]
+
+[ext_resource type="Texture2D" uid="uid://c7j48nbsw212h" path="res://sprites/rand.png" id="1_x8wyc"]
+[ext_resource type="Script" uid="uid://cn3gb2yilfbwi" path="res://scripts/TaskConfiguredData/image_task_data_configured.gd" id="2_m5657"]
+[ext_resource type="Script" uid="uid://us1cbla1vfo4" path="res://scripts/additional/decorative_spot.gd" id="3_x8wyc"]
+[ext_resource type="Texture2D" uid="uid://b2syol7ekin04" path="res://sprites/spot2.png" id="5_0kce7"]
+
+[sub_resource type="Resource" id="Resource_8f2t2"]
+script = ExtResource("3_x8wyc")
+image = ExtResource("5_0kce7")
+scale = Vector2(1, 4)
+postion = Vector2(0.14, 0.5)
+metadata/_custom_type_script = "uid://us1cbla1vfo4"
+
+[sub_resource type="Resource" id="Resource_m5657"]
+script = ExtResource("3_x8wyc")
+image = ExtResource("5_0kce7")
+scale = Vector2(1, 4)
+postion = Vector2(0.4, 0.5)
+metadata/_custom_type_script = "uid://us1cbla1vfo4"
+
+[sub_resource type="Resource" id="Resource_x8wyc"]
+script = ExtResource("3_x8wyc")
+image = ExtResource("5_0kce7")
+scale = Vector2(1, 4)
+postion = Vector2(0.65, 0.5)
+metadata/_custom_type_script = "uid://us1cbla1vfo4"
+
+[sub_resource type="Resource" id="Resource_hc4c7"]
+script = ExtResource("3_x8wyc")
+image = ExtResource("5_0kce7")
+scale = Vector2(1, 4)
+postion = Vector2(0.86, 0.5)
+metadata/_custom_type_script = "uid://us1cbla1vfo4"
+
+[resource]
+script = ExtResource("2_m5657")
+answers = Array[String](["Передний вид скелета", "Задний вид скелета", "Передний вид мышц", "Задний вид мышц"])
+image = ExtResource("1_x8wyc")
+spots = Array[ExtResource("3_x8wyc")]([SubResource("Resource_8f2t2"), SubResource("Resource_m5657"), SubResource("Resource_x8wyc"), SubResource("Resource_hc4c7")])
+question = "Что это?"
+one_shot = true
+metadata/_custom_type_script = "uid://cn3gb2yilfbwi"

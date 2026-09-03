@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dsfxw0akun2k3"]
+
+[ext_resource type="Texture2D" uid="uid://lrprmejiairb" path="res://sprites/button.png" id="1_vc683"]
+[ext_resource type="LabelSettings" uid="uid://cyp06wh4u08e2" path="res://resources/text.tres" id="2_2kpgj"]
+[ext_resource type="Texture2D" uid="uid://cke6d66jghip3" path="res://sprites/buttonPress.png" id="2_i15fd"]
+[ext_resource type="Texture2D" uid="uid://d27ybcdm7lpq5" path="res://sprites/Wbutton.png" id="3_vj83g"]
+[ext_resource type="Script" uid="uid://digarrwtatbpm" path="res://scripts/additional/simple_button.gd" id="4_kjypl"]
+[ext_resource type="Texture2D" uid="uid://m70u17noyqcj" path="res://sprites/Rbutton.png" id="5_uvaku"]
+
+[node name="SimpleButton" type="TextureButton" unique_id=1600989346 node_paths=PackedStringArray("label")]
+custom_minimum_size = Vector2(370, 100)
+offset_right = 370.0
+offset_bottom = 100.0
+texture_normal = ExtResource("1_vc683")
+texture_pressed = ExtResource("2_i15fd")
+texture_disabled = ExtResource("2_i15fd")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("4_kjypl")
+label = NodePath("Label")
+wrong_texture = ExtResource("3_vj83g")
+right_texture = ExtResource("5_uvaku")
+
+[node name="Label" type="Label" parent="." unique_id=110569728]
+custom_minimum_size = Vector2(370, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Кнопка"
+label_settings = ExtResource("2_2kpgj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="." to="." method="on_pressed"]

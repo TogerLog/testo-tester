@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://buj40tiw0sl5a"]
+
+[ext_resource type="PackedScene" uid="uid://bneiliy27rdog" path="res://scenes/additional/array.tscn" id="1_2n0a8"]
+[ext_resource type="Script" uid="uid://dcv1blpbw6d6w" path="res://scripts/array_ui/ui_array_dec_spot.gd" id="2_jad3v"]
+[ext_resource type="PackedScene" uid="uid://7f01ksdl55n1" path="res://scenes/additional/element_dec_spot.tscn" id="3_2n0a8"]
+
+[node name="ArrayDecSpots" unique_id=840071763 instance=ExtResource("1_2n0a8")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_jad3v")
+element_prefab = ExtResource("3_2n0a8")

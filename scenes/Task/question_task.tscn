@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://b1bmdegp7msx5"]
+
+[ext_resource type="Script" uid="uid://c3wpyurhd5pu0" path="res://scripts/Tasks/question_task.gd" id="1_ab0h6"]
+[ext_resource type="PackedScene" uid="uid://dsfxw0akun2k3" path="res://scenes/additional/simple_button.tscn" id="2_vykvc"]
+[ext_resource type="LabelSettings" uid="uid://bmu6qu841p3ui" path="res://resources/big_text.tres" id="3_x3mrw"]
+
+[node name="QuestionTask" type="Control" unique_id=1157611986 node_paths=PackedStringArray("question_label", "buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ab0h6")
+question_label = NodePath("Label")
+buttons = [NodePath("bottom/SimpleButton"), NodePath("bottom/SimpleButton2"), NodePath("Top/SimpleButton"), NodePath("Top/SimpleButton2"), NodePath("bottom/SimpleButton3"), NodePath("Top/SimpleButton3"), NodePath("bottom/SimpleButton4"), NodePath("Top/SimpleButton4")]
+right_answer = Array[String]([])
+
+[node name="Label" type="Label" parent="." unique_id=1744769343]
+custom_minimum_size = Vector2(1120, 868)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_right = -400.0
+offset_bottom = -212.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Вопрос"
+label_settings = ExtResource("3_x3mrw")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="bottom" type="HBoxContainer" parent="." unique_id=1998232288]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -788.0
+offset_top = -140.0
+offset_right = 788.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="SimpleButton" parent="bottom" unique_id=1600989346 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -80)
+text = "Кнопка"
+
+[node name="SimpleButton2" parent="bottom" unique_id=1027430457 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -80)
+text = "Кнопка"
+
+[node name="SimpleButton3" parent="bottom" unique_id=518853781 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -80)
+text = "Кнопка"
+
+[node name="SimpleButton4" parent="bottom" unique_id=306429893 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -80)
+text = "Кнопка"
+
+[node name="Top" type="HBoxContainer" parent="." unique_id=360591954]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -788.0
+offset_top = -252.0
+offset_right = 788.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="SimpleButton" parent="Top" unique_id=900958665 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -192)
+text = "Кнопка"
+
+[node name="SimpleButton2" parent="Top" unique_id=173608617 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -192)
+text = "Кнопка"
+
+[node name="SimpleButton3" parent="Top" unique_id=299154807 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -192)
+text = "Кнопка"
+
+[node name="SimpleButton4" parent="Top" unique_id=748135354 instance=ExtResource("2_vykvc")]
+visible = false
+layout_mode = 2
+offset_transform_position = Vector2(0, -192)
+text = "Кнопка"

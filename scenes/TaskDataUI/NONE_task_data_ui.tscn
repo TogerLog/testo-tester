@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b2hpdlm3h4lu8"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_ngygm"]
+[ext_resource type="Script" uid="uid://ydvtakfykxhi" path="res://scripts/TaskDataUI/task_data_ui.gd" id="2_vpuqh"]
+
+[node name="TaskData" type="Control" unique_id=434047097 node_paths=PackedStringArray("points_spin_box", "penalty_spin_box", "one_shot_toggle", "show_everything_toggle", "name_text_line")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ngygm")
+script = ExtResource("2_vpuqh")
+points_spin_box = NodePath("SpinBox")
+penalty_spin_box = NodePath("SpinBox")
+one_shot_toggle = NodePath("TextureButton")
+show_everything_toggle = NodePath("TextureButton")
+name_text_line = NodePath("LineEdit")
+
+[node name="Label" type="Label" parent="." unique_id=2136822336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "ТИП НЕ НАСТРОЕН
+СООБЩИТЕ ОБ ОШИБКЕ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=294136760]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+disabled = true
+
+[node name="SpinBox" type="SpinBox" parent="." unique_id=1877200975]
+visible = false
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 53.0
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=239762882]
+visible = false
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 53.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ChronoTaskDataConfigured" format=3 uid="uid://cmm0ntq1klu48"]
+
+[ext_resource type="Script" uid="uid://ch0qxm78pgbis" path="res://scripts/TaskConfiguredData/chronology_task_data_configured.gd" id="1_r3yvy"]
+
+[resource]
+script = ExtResource("1_r3yvy")
+average = 6
+pairs = Array[String](["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"])
+hint = "по возрастанию"
+one_shot = true
+metadata/_custom_type_script = "uid://ch0qxm78pgbis"

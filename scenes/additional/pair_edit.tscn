@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cju6kkcotrelq"]
+
+[ext_resource type="Script" uid="uid://d2ua042olkwp4" path="res://scripts/array_ui/ui_array_element_pair.gd" id="1_yihme"]
+
+[node name="LineEdit" type="HBoxContainer" unique_id=1290584001 node_paths=PackedStringArray("first_node", "second_node")]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_yihme")
+first_node = NodePath("question")
+second_node = NodePath("answer")
+
+[node name="question" type="LineEdit" parent="." unique_id=1242790187]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+placeholder_text = "Введите вопрос..."
+
+[node name="answer" type="LineEdit" parent="." unique_id=1697446950]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+placeholder_text = "Введите ответ..."
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=691249187]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="up" type="Button" parent="Buttons" unique_id=828497319]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↑"
+
+[node name="down" type="Button" parent="Buttons" unique_id=882760105]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↓"
+
+[connection signal="pressed" from="Buttons/up" to="." method="_on_move_up"]
+[connection signal="pressed" from="Buttons/down" to="." method="_on_move_down"]

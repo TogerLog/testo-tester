@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dl5lxd2lbe14n"]
+
+[ext_resource type="FontFile" uid="uid://dmhtc1lalfm1x" path="res://fonts/calibri.ttf" id="1_r2jr2"]
+
+[resource]
+font = ExtResource("1_r2jr2")
+font_size = 46
+outline_size = 15
+outline_color = Color(0.23137255, 0.21960784, 0.21960784, 1)

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ec658xh0ble5"]
+
+[ext_resource type="PackedScene" uid="uid://bneiliy27rdog" path="res://scenes/additional/array.tscn" id="1_vrrpx"]
+[ext_resource type="PackedScene" uid="uid://bip2bfdde5peb" path="res://scenes/additional/text_edit.tscn" id="2_lryud"]
+[ext_resource type="Script" uid="uid://bqaam7lfpfvxb" path="res://scripts/array_ui/ui_array_string.gd" id="2_xh4al"]
+
+[node name="Array" unique_id=840071763 instance=ExtResource("1_vrrpx")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_xh4al")
+element_prefab = ExtResource("2_lryud")

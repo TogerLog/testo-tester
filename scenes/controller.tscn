@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dubsdwgouo6mi"]
+
+[ext_resource type="Script" uid="uid://ct61pjauv4tkm" path="res://scripts/controller.gd" id="1_a3fk4"]
+[ext_resource type="PackedScene" uid="uid://b1bmdegp7msx5" path="res://scenes/Task/question_task.tscn" id="2_vx3wb"]
+[ext_resource type="AudioStream" uid="uid://dr1e35yfop7ih" path="res://sounds/electro_piano/correct.ogg" id="3_a3fk4"]
+[ext_resource type="AudioStream" uid="uid://dbeuq6aorkanr" path="res://sounds/electro_piano/wrong.wav" id="4_vx3wb"]
+
+[node name="CONTROLLER" type="Control" unique_id=331434478 node_paths=PackedStringArray("right_buzz", "wrong_buzz", "timer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_a3fk4")
+taskTypeObjects = Dictionary[String, PackedScene]({
+"QuestionTask": ExtResource("2_vx3wb")
+})
+taskTypeLabel = Dictionary[String, String]({
+"QuestionTask": "Задание с ответом"
+})
+right_buzz = NodePath("Right")
+wrong_buzz = NodePath("Wrong")
+timer = NodePath("TimerBetweenTask")
+
+[node name="Right" type="AudioStreamPlayer" parent="." unique_id=82477048]
+stream = ExtResource("3_a3fk4")
+volume_db = -8.0
+
+[node name="Wrong" type="AudioStreamPlayer" parent="." unique_id=1469313549]
+stream = ExtResource("4_vx3wb")
+volume_db = -8.0
+
+[node name="TimerBetweenTask" type="Timer" parent="." unique_id=1754678161]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="TimerBetweenTask" to="." method="_on_break_ended"]

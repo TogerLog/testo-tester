@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://d0sni2axf84dc"]
+
+[ext_resource type="Script" uid="uid://tdggmdngqknr" path="res://scripts/Tasks/link_task.gd" id="1_nbcas"]
+[ext_resource type="PackedScene" uid="uid://de7kw58lay67h" path="res://scenes/additional/block.tscn" id="2_i1tnh"]
+[ext_resource type="PackedScene" uid="uid://dsfxw0akun2k3" path="res://scenes/additional/simple_button.tscn" id="2_sbob3"]
+[ext_resource type="PackedScene" uid="uid://cgta2gcjmhjkd" path="res://scenes/additional/right_block.tscn" id="3_500am"]
+[ext_resource type="LabelSettings" uid="uid://bmu6qu841p3ui" path="res://resources/big_text.tres" id="5_7oej8"]
+
+[node name="LinkTask" type="Control" unique_id=215775108 node_paths=PackedStringArray("left_father", "right_father", "check_timer", "accept_button", "label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nbcas")
+left_block = ExtResource("2_i1tnh")
+right_block = ExtResource("3_500am")
+left_father = NodePath("leftPairs")
+right_father = NodePath("leftPairs2")
+check_timer = NodePath("CheckTime")
+accept_button = NodePath("SimpleButton")
+label = NodePath("Label")
+
+[node name="SimpleButton" parent="." unique_id=1600989346 instance=ExtResource("2_sbob3")]
+self_modulate = Color(0.7490196, 1, 0.78431374, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -134.0
+offset_right = 185.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "принять"
+
+[node name="leftPairs" type="VBoxContainer" parent="." unique_id=1374498670]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 32.0
+offset_right = 725.0
+offset_bottom = -68.0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="leftPairs2" type="VBoxContainer" parent="." unique_id=1516087242]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -725.0
+offset_top = 32.0
+offset_right = -150.0
+offset_bottom = -68.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="CheckTime" type="Timer" parent="." unique_id=1552113048]
+wait_time = 0.5
+one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=1312226966]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.95
+anchor_right = 0.05
+anchor_bottom = 0.95
+offset_top = -158.0
+offset_right = 548.0
+grow_vertical = 0
+text = "Hint"
+label_settings = ExtResource("5_7oej8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="SimpleButton" to="." method="on_answer_accepted"]
+[connection signal="timeout" from="CheckTime" to="." method="on_timer"]

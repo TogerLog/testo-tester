@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ddgvv8blxba2l"]
+
+[ext_resource type="PackedScene" uid="uid://kkrnyognplgw" path="res://scenes/TaskDataUI/chrono_task_data_ui.tscn" id="1_pgen8"]
+[ext_resource type="Script" uid="uid://dd4n3db2jjpwc" path="res://scripts/TaskDataUI/chrono_task_data_configured_ui.gd" id="2_w6da0"]
+
+[node name="ChronoTaskDataConfiguredUI" unique_id=434047097 node_paths=PackedStringArray("average") instance=ExtResource("1_pgen8")]
+script = ExtResource("2_w6da0")
+average = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2/average")
+
+[node name="Type" parent="VBoxContainer/Names/Panel" parent_id_path=PackedInt32Array(672157133) index="0" unique_id=644922319]
+text = "[ГЕНЕРАТОР] Последовательность"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer" parent_id_path=PackedInt32Array(2080493751) index="2" unique_id=103547913]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" index="0" unique_id=1284371152]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Сверху вниз"
+mouse_filter = 1
+text = "Среднее количество на задание"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="average" type="SpinBox" parent="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" index="1" unique_id=1859882864]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 2.0
+max_value = 6.0
+value = 2.0
+rounded = true
+
+[node name="Chronology" parent="VBoxContainer/ScrollContainer/VBoxContainer" parent_id_path=PackedInt32Array(2080493751) index="4" unique_id=840071763]
+custom_minimum_size = Vector2(0, 500)
+custom_maximum_size = Vector2(-1, 500)
+limit = -1
+
+[connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2/average" to="." method="_on_average_value_changed"]

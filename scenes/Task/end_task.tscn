@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bklmsbgnk3gav"]
+
+[ext_resource type="Script" uid="uid://bgphts4pnw1p3" path="res://scripts/Tasks/end_task.gd" id="1_djfay"]
+[ext_resource type="LabelSettings" uid="uid://bmu6qu841p3ui" path="res://resources/big_text.tres" id="2_77aew"]
+[ext_resource type="AudioStream" uid="uid://caoa16x5busay" path="res://sounds/perfect/WIN.mp3" id="3_h2jj1"]
+[ext_resource type="AudioStream" uid="uid://0qw3lbv1kms5" path="res://sounds/win_jingle/391540__unlistenable__electro-success-sound.wav" id="3_tmmxt"]
+[ext_resource type="AudioStream" uid="uid://k46tu8xrs46q" path="res://sounds/perfect/LOSE.wav" id="4_2fer8"]
+[ext_resource type="AudioStream" uid="uid://s7i26xg3rcvy" path="res://sounds/win_jingle/325112__fisch12345__success.wav" id="4_igomv"]
+[ext_resource type="AudioStream" uid="uid://cw86t0g3hmvuy" path="res://sounds/lose_jingle/138490__justinvoke__powerdown-2.wav" id="5_h2jj1"]
+[ext_resource type="AudioStream" uid="uid://cnbi7cvryw00b" path="res://sounds/lose_jingle/848654__julypink__retro-game-fail-motif.mp3" id="6_2fer8"]
+
+[node name="END" type="Control" unique_id=1259237800 node_paths=PackedStringArray("score_label", "result", "quote", "win", "win_P", "lose", "lose_P")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_djfay")
+score_label = NodePath("Label2")
+result = NodePath("Label3")
+quote = NodePath("Label4")
+win = [NodePath("win/391540UnlistenableElectroSuccessSound"), NodePath("win/325112Fisch12345Success")]
+win_P = NodePath("Win")
+lose = [NodePath("lose/138490JustinvokePowerdown2"), NodePath("lose/848654JulypinkRetroGameFailMotif")]
+lose_P = NodePath("Lose")
+max_mistake = 3
+
+[node name="Label2" type="Label" parent="." unique_id=1301015172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 47.0
+offset_bottom = -698.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Тест пройден"
+label_settings = ExtResource("2_77aew")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=406404866]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 278.0
+offset_bottom = -467.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Тест пройден"
+label_settings = ExtResource("2_77aew")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=2132166149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 498.0
+offset_bottom = -247.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Тест пройден"
+label_settings = ExtResource("2_77aew")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=12871021]
+stream = ExtResource("3_h2jj1")
+
+[node name="Lose" type="AudioStreamPlayer" parent="." unique_id=1822976590]
+stream = ExtResource("4_2fer8")
+
+[node name="win" type="Node" parent="." unique_id=390237497]
+
+[node name="391540UnlistenableElectroSuccessSound" type="AudioStreamPlayer" parent="win" unique_id=975134973]
+stream = ExtResource("3_tmmxt")
+
+[node name="325112Fisch12345Success" type="AudioStreamPlayer" parent="win" unique_id=1132497773]
+stream = ExtResource("4_igomv")
+
+[node name="lose" type="Node" parent="." unique_id=1698275271]
+
+[node name="138490JustinvokePowerdown2" type="AudioStreamPlayer" parent="lose" unique_id=1011597297]
+stream = ExtResource("5_h2jj1")
+
+[node name="848654JulypinkRetroGameFailMotif" type="AudioStreamPlayer" parent="lose" unique_id=323224198]
+stream = ExtResource("6_2fer8")

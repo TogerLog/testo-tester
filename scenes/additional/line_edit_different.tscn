@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://chsfdw521cdfh"]
+
+[ext_resource type="PackedScene" uid="uid://cju6kkcotrelq" path="res://scenes/additional/pair_edit.tscn" id="1_uw7uf"]
+
+[node name="LineEdit" unique_id=1290584001 instance=ExtResource("1_uw7uf")]
+
+[node name="question" parent="." index="0" unique_id=1242790187]
+placeholder_text = "Введите первое значение..."
+
+[node name="answer" parent="." index="1" unique_id=1697446950]
+placeholder_text = "Введите второе значение..."

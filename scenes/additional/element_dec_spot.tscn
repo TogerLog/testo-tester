@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://7f01ksdl55n1"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_th2yh"]
+[ext_resource type="Script" uid="uid://bss422xpl246d" path="res://scripts/array_ui/ui_element_dec_spot.gd" id="2_3leqs"]
+[ext_resource type="PackedScene" uid="uid://0f3wf5yqeq7w" path="res://scenes/additional/choose_image.tscn" id="3_evfr2"]
+
+[node name="ElementDecSpot" type="Panel" unique_id=48623447 node_paths=PackedStringArray("image_explorer", "index_label", "stoper")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme = ExtResource("1_th2yh")
+script = ExtResource("2_3leqs")
+image_explorer = NodePath("SpotConfigurer/ImageExplorer")
+index_label = NodePath("SpotConfigurer/Panel/Label")
+stoper = NodePath("Stoper")
+
+[node name="SpotConfigurer" type="HBoxContainer" parent="." unique_id=1827560174]
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_th2yh")
+
+[node name="Panel" type="Panel" parent="SpotConfigurer" unique_id=1584775736]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SpotConfigurer/Panel" unique_id=564642740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImageExplorer" parent="SpotConfigurer" unique_id=1705251148 instance=ExtResource("3_evfr2")]
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="SpotConfigurer" unique_id=260193518]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Установить положение"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpotConfigurer" unique_id=2002666881]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="up" type="Button" parent="SpotConfigurer/VBoxContainer" unique_id=1903566308]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↑"
+
+[node name="down" type="Button" parent="SpotConfigurer/VBoxContainer" unique_id=1026441555]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↓"
+
+[node name="Stoper" type="Control" parent="." unique_id=913494928]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[connection signal="id_updated" from="SpotConfigurer/ImageExplorer" to="." method="_on_image_explorer_id_updated"]
+[connection signal="pressed" from="SpotConfigurer/Button" to="." method="_on_configure_pressed"]
+[connection signal="pressed" from="SpotConfigurer/VBoxContainer/up" to="." method="_on_move_up"]
+[connection signal="pressed" from="SpotConfigurer/VBoxContainer/up" to="SpotConfigurer" method="_on_move_up"]
+[connection signal="pressed" from="SpotConfigurer/VBoxContainer/down" to="SpotConfigurer" method="_on_move_down"]
+[connection signal="property_list_changed" from="SpotConfigurer/VBoxContainer/down" to="." method="_on_move_down"]

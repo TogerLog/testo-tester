@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bip2bfdde5peb"]
+
+[ext_resource type="Script" uid="uid://bjo77vo5nsnm7" path="res://scripts/array_ui/ui_array_element_string.gd" id="1_bq1kd"]
+
+[node name="LineEdit" type="HBoxContainer" unique_id=1290584001 node_paths=PackedStringArray("line_edit")]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_vertical = 3
+script = ExtResource("1_bq1kd")
+line_edit = NodePath("LineEdit")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1242790187]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+placeholder_text = "Введите текст..."
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=691249187]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="up" type="Button" parent="Buttons" unique_id=828497319]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↑"
+
+[node name="down" type="Button" parent="Buttons" unique_id=882760105]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↓"
+
+[connection signal="pressed" from="Buttons/up" to="." method="_on_move_up"]
+[connection signal="pressed" from="Buttons/down" to="." method="_on_move_down"]

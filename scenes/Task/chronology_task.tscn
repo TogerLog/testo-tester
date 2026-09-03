@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://dtaswovxl5o0j"]
+
+[ext_resource type="Script" uid="uid://de471rvp7smrg" path="res://scripts/Tasks/chronology_task.gd" id="1_t6cq1"]
+[ext_resource type="PackedScene" uid="uid://dsfxw0akun2k3" path="res://scenes/additional/simple_button.tscn" id="2_6rjkc"]
+[ext_resource type="PackedScene" uid="uid://d2rmcak7bh3cg" path="res://scenes/additional/chrono_block.tscn" id="2_s4c88"]
+[ext_resource type="Texture2D" uid="uid://m70u17noyqcj" path="res://sprites/Rbutton.png" id="3_qqcrp"]
+[ext_resource type="Texture2D" uid="uid://d27ybcdm7lpq5" path="res://sprites/Wbutton.png" id="4_wlm7d"]
+[ext_resource type="Texture2D" uid="uid://32ppvnxmqvhw" path="res://sprites/arrowdown.png" id="6_qqcrp"]
+[ext_resource type="LabelSettings" uid="uid://cyp06wh4u08e2" path="res://resources/text.tres" id="7_wlm7d"]
+
+[node name="chronology_task" type="Control" unique_id=305844715 node_paths=PackedStringArray("container", "timer", "cover", "label", "accept_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_t6cq1")
+container = NodePath("VBoxContainer")
+chrono_block = ExtResource("2_s4c88")
+timer = NodePath("Timer")
+cover = NodePath("cover")
+label = NodePath("TextureRect/Label")
+right_button = ExtResource("3_qqcrp")
+wrong_button = ExtResource("4_wlm7d")
+accept_button = NodePath("accept")
+
+[node name="Timer" type="Timer" parent="." unique_id=58540009]
+wait_time = 0.5
+one_shot = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1622314638]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="accept" parent="." unique_id=1600989346 instance=ExtResource("2_6rjkc")]
+self_modulate = Color(0.7490196, 1, 0.78431374, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.95
+anchor_right = 0.5
+anchor_bottom = 0.95
+offset_left = -185.0
+offset_top = -100.0
+offset_right = 185.0
+offset_bottom = 0.0
+text = "Принять"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1561012982]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.3
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_qqcrp")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=303818877]
+custom_minimum_size = Vector2(388, 468)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -416.5
+offset_right = -229.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = ExtResource("7_wlm7d")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="cover" type="Control" parent="." unique_id=1116995534]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="timeout" from="Timer" to="." method="check_answer"]
+[connection signal="pressed" from="accept" to="." method="_on_accepted"]

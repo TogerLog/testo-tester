@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://c7dkln2ipdsu3"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_bf4j3"]
+[ext_resource type="Script" uid="uid://cglmdufm8tj6n" path="res://scripts/array_ui/ui_element_dec_spot_conf.gd" id="2_a5281"]
+[ext_resource type="PackedScene" uid="uid://0f3wf5yqeq7w" path="res://scenes/additional/choose_image.tscn" id="4_y0wrd"]
+[ext_resource type="Script" uid="uid://d2ua042olkwp4" path="res://scripts/array_ui/ui_array_element_pair.gd" id="5_x5lbg"]
+
+[node name="IMGElement" type="Control" unique_id=855941565 node_paths=PackedStringArray("pairer", "image_explorer", "index_label", "stoper")]
+custom_minimum_size = Vector2(0, 200)
+custom_maximum_size = Vector2(-1, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bf4j3")
+script = ExtResource("2_a5281")
+pairer = NodePath("HBoxContainer/LineEdit")
+image_explorer = NodePath("HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer/ImageExplorer")
+index_label = NodePath("HBoxContainer/SpotConfigurer/SpotConfigurer/Panel/Label")
+stoper = NodePath("Stoper")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2140031926]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpotConfigurer" type="Panel" parent="HBoxContainer" unique_id=48623447]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+theme = ExtResource("1_bf4j3")
+
+[node name="SpotConfigurer" type="HBoxContainer" parent="HBoxContainer/SpotConfigurer" unique_id=1827560174]
+custom_minimum_size = Vector2(0, 200)
+custom_maximum_size = Vector2(-1, 200)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_bf4j3")
+
+[node name="Panel" type="Panel" parent="HBoxContainer/SpotConfigurer/SpotConfigurer" unique_id=1584775736]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/Panel" unique_id=564642740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/SpotConfigurer/SpotConfigurer" unique_id=1730369793]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer" unique_id=569274279]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ImageExplorer" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer" unique_id=1705251148 instance=ExtResource("4_y0wrd")]
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer" unique_id=260193518]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Установить положение"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer" unique_id=1478437336]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="question" type="LineEdit" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer2" unique_id=1242790187]
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Введите вопрос..."
+
+[node name="answer" type="LineEdit" parent="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer2" unique_id=1697446950]
+custom_minimum_size = Vector2(0, 100)
+custom_maximum_size = Vector2(-1, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Введите ответ..."
+
+[node name="LineEdit" type="HBoxContainer" parent="HBoxContainer" unique_id=1290584001 node_paths=PackedStringArray("first_node", "second_node")]
+custom_minimum_size = Vector2(0, 200)
+custom_maximum_size = Vector2(-1, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+script = ExtResource("5_x5lbg")
+first_node = NodePath("../SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer2/question")
+second_node = NodePath("../SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer2/answer")
+
+[node name="Buttons" type="VBoxContainer" parent="HBoxContainer/LineEdit" unique_id=691249187]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="up" type="Button" parent="HBoxContainer/LineEdit/Buttons" unique_id=828497319]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↑"
+
+[node name="down" type="Button" parent="HBoxContainer/LineEdit/Buttons" unique_id=882760105]
+layout_mode = 2
+size_flags_vertical = 3
+text = "↓"
+
+[node name="Stoper" type="Control" parent="." unique_id=913494928]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[connection signal="id_updated" from="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer/ImageExplorer" to="." method="_on_image_explorer_id_updated"]
+[connection signal="pressed" from="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer/Button" to="." method="_on_configure_pressed"]
+[connection signal="text_changed" from="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer2/question" to="." method="_on_question_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/SpotConfigurer/SpotConfigurer/VBoxContainer/HBoxContainer2/answer" to="." method="_on_answer_text_changed"]
+[connection signal="pressed" from="HBoxContainer/LineEdit/Buttons/up" to="." method="_on_move_up"]
+[connection signal="pressed" from="HBoxContainer/LineEdit/Buttons/down" to="." method="_on_move_down"]

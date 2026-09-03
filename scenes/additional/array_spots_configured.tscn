@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cjdffagdygmtj"]
+
+[ext_resource type="PackedScene" uid="uid://bneiliy27rdog" path="res://scenes/additional/array.tscn" id="1_juujs"]
+[ext_resource type="Script" uid="uid://c6opd6h5fbq3o" path="res://scripts/additional/array_spots_configured.gd" id="2_nwrk2"]
+[ext_resource type="PackedScene" uid="uid://bg726g3sk1bnx" path="res://scenes/additional/element_spot_configured.tscn" id="3_juujs"]
+[ext_resource type="Script" uid="uid://c21xad5q1vcfc" path="res://scripts/additional/pair.gd" id="3_nwrk2"]
+
+[node name="ArraySpotsConfigured" unique_id=840071763 instance=ExtResource("1_juujs")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_nwrk2")
+pairs = Array[ExtResource("3_nwrk2")]([])
+element_prefab = ExtResource("3_juujs")

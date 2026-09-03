@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bneiliy27rdog"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_inj8n"]
+[ext_resource type="Script" uid="uid://c033uunpfimt2" path="res://scripts/array_ui/ui_array.gd" id="2_gqrss"]
+
+[node name="Array" type="Panel" unique_id=840071763 node_paths=PackedStringArray("elements_parent", "delete_button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_inj8n")
+script = ExtResource("2_gqrss")
+elements_parent = NodePath("Seperator/ScrollElements/Elements")
+delete_button = NodePath("Seperator/buttons/delete")
+
+[node name="Seperator" type="VBoxContainer" parent="." unique_id=1585903031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="buttons" type="HBoxContainer" parent="Seperator" unique_id=968427809]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="new" type="Button" parent="Seperator/buttons" unique_id=1638582794]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Создать"
+
+[node name="delete" type="Button" parent="Seperator/buttons" unique_id=184654828]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Удалить"
+
+[node name="ScrollElements" type="ScrollContainer" parent="Seperator" unique_id=228227222]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Elements" type="VBoxContainer" parent="Seperator/ScrollElements" unique_id=1948516204]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[connection signal="pressed" from="Seperator/buttons/new" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Seperator/buttons/delete" to="." method="_on_delete_pressed"]

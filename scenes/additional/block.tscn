@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://de7kw58lay67h"]
+
+[ext_resource type="Texture2D" uid="uid://ce3vjujtvbc5q" path="res://sprites/block.png" id="1_ojgcc"]
+[ext_resource type="Script" uid="uid://n4e12i5qrhha" path="res://scripts/additional/left_block.gd" id="2_bk4tb"]
+[ext_resource type="Texture2D" uid="uid://c6vsf0jv62s85" path="res://sprites/whiteSmallPoint.png" id="3_6yb8a"]
+[ext_resource type="Texture2D" uid="uid://bcnyo8uysogq3" path="res://sprites/smallPoint.png" id="3_bk4tb"]
+[ext_resource type="Texture2D" uid="uid://cll06ajnd16nv" path="res://sprites/liner.png" id="4_1bw7o"]
+[ext_resource type="PackedScene" uid="uid://dtis38o2q2jdi" path="res://scenes/additional/point_button.tscn" id="4_kfh62"]
+[ext_resource type="Texture2D" uid="uid://cc8w7s1s3ssnu" path="res://sprites/spg.png" id="5_p68qx"]
+[ext_resource type="Texture2D" uid="uid://ct0cttgx7y0o8" path="res://sprites/spr.png" id="6_7n2m4"]
+[ext_resource type="Texture2D" uid="uid://bmveqpuv5bc4r" path="res://sprites/green.png" id="8_imhu6"]
+[ext_resource type="Texture2D" uid="uid://c2crxkow3xih6" path="res://sprites/red.png" id="9_ks7yy"]
+[ext_resource type="Texture2D" uid="uid://lf6vd50qnrbs" path="res://sprites/linerwhite.png" id="10_mooc3"]
+[ext_resource type="Texture2D" uid="uid://du37gvmw860bh" path="res://sprites/whiteBlock.png" id="11_digto"]
+[ext_resource type="LabelSettings" uid="uid://dl5lxd2lbe14n" path="res://resources/text_not_smol.tres" id="12_6yb8a"]
+
+[node name="block" type="TextureRect" unique_id=1394356724 node_paths=PackedStringArray("point_start", "point_end", "line", "label")]
+z_index = -2
+z_as_relative = false
+custom_minimum_size = Vector2(459.648, 119.424)
+mouse_filter = 2
+texture = ExtResource("1_ojgcc")
+expand_mode = 1
+script = ExtResource("2_bk4tb")
+pressed_texture = ExtResource("3_6yb8a")
+normal_texture = ExtResource("3_bk4tb")
+right_texture = ExtResource("5_p68qx")
+wrong_texture = ExtResource("6_7n2m4")
+line_texture = ExtResource("4_1bw7o")
+line_green_texture = ExtResource("8_imhu6")
+line_red_texture = ExtResource("9_ks7yy")
+line_white_texture = ExtResource("10_mooc3")
+block_texture = ExtResource("1_ojgcc")
+block_white_texture = ExtResource("11_digto")
+point_start = NodePath("PointStart")
+point_end = NodePath("PointButton")
+line = NodePath("PointStart/Line")
+correct_answer = "text"
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1281416220]
+z_index = -2
+z_as_relative = false
+custom_minimum_size = Vector2(422.543, 119.424)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.043
+anchor_right = 0.95
+anchor_bottom = 0.949
+offset_left = 0.56492805
+offset_top = -5.6129265
+offset_right = -7.1226196
+offset_bottom = 5.6129303
+grow_horizontal = 2
+grow_vertical = 2
+text = "майнкрафт
+авфав"
+label_settings = ExtResource("12_6yb8a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointStart" type="TextureRect" parent="." unique_id=1455409469]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.000002
+offset_right = 29.999939
+offset_bottom = 30.000004
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_bk4tb")
+expand_mode = 1
+
+[node name="Line" type="TextureRect" parent="PointStart" unique_id=499513100]
+z_index = -1
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -7.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0, 0.5)
+texture = ExtResource("4_1bw7o")
+expand_mode = 1
+
+[node name="PointButton" parent="." unique_id=1753612138 instance=ExtResource("4_kfh62")]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+
+[connection signal="button_down" from="PointButton" to="." method="_on_button_down"]
+[connection signal="button_up" from="PointButton" to="." method="_on_button_up"]

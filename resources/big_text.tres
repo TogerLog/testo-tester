@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bmu6qu841p3ui"]
+
+[ext_resource type="FontFile" uid="uid://dmhtc1lalfm1x" path="res://fonts/calibri.ttf" id="1_noqlb"]
+
+[resource]
+font = ExtResource("1_noqlb")
+font_size = 72
+outline_size = 20
+outline_color = Color(0.18039216, 0.17254902, 0.17254902, 1)

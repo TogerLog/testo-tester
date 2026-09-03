@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://0f3wf5yqeq7w"]
+
+[ext_resource type="Theme" uid="uid://li0gpupr242j" path="res://resources/editor.tres" id="1_3p8ty"]
+[ext_resource type="Script" uid="uid://bwiocj4a2axke" path="res://scripts/array_ui/choose_image.gd" id="1_6f5mt"]
+[ext_resource type="Texture2D" uid="uid://d2x120n7aed6j" path="res://sprites/no image.png" id="2_6f5mt"]
+
+[node name="ImageExplorer" type="HBoxContainer" unique_id=1705251148 node_paths=PackedStringArray("image", "button")]
+custom_minimum_size = Vector2(0, 85)
+custom_maximum_size = Vector2(-1, 85)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 497.5
+offset_bottom = -497.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_3p8ty")
+script = ExtResource("1_6f5mt")
+image = NodePath("TextureRect")
+button = NodePath("MenuButton")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1606659246]
+layout_mode = 2
+texture = ExtResource("2_6f5mt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="TextureRect" unique_id=822827603]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=818473220]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Выберите изображение"
+flat = false
+autowrap_mode = 2
+
+[connection signal="about_to_popup" from="MenuButton" to="." method="about_to_poppup"]
