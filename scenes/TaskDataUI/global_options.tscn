@@ -310,7 +310,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 rounded = true
 
-[connection signal="text_submitted" from="VBoxContainer/Name" to="." method="_on_name_text_submitted"]
+[connection signal="text_changed" from="VBoxContainer/Name" to="." method="_on_name_text_submitted"]
 [connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/Options/OptionUI/Points" to="." method="_on_points_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/ScrollContainer/VBoxContainer/Options/OptionUI/Penalty" to="." method="_on_penalty_value_changed"]
 [connection signal="toggled" from="VBoxContainer/ScrollContainer/VBoxContainer/Options/OptionUI/UseOptions" to="." method="_on_use_options_toggled"]
