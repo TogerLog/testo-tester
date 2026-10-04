@@ -10,6 +10,7 @@ class_name Controller
 
 @export var right_buzz: AudioStreamPlayer
 @export var wrong_buzz: AudioStreamPlayer
+@export var skip_buzz: AudioStreamPlayer
 
 @export var current_task_obj: Node
 
@@ -31,6 +32,9 @@ class_name Controller
 @export var threshold: int = 3
 @export var threshold_percent: float = 3
 
+func _ready() -> void:
+	skip_buzz.finished.connect(end_task)
+
 func start() -> void:
 	update_score()
 	taskCounterMax = tasks.size() - 1
@@ -39,7 +43,7 @@ func start() -> void:
 func load_new_data(new_test_data: TestData):
 	score = 0
 	for child in get_children():
-		if child.get_index() > 2:
+		if child.get_index() > 3:
 			child.queue_free()
 	test_data = new_test_data
 	
@@ -129,6 +133,14 @@ func end_task() -> void:
 	current_task_obj.finished.disconnect(on_finished_task)
 	current_task_obj.failed.disconnect(on_failed_task)
 	timer.start()
+
+func task_skip() -> void:
+	if taskCounter <= taskCounterMax:
+		skip_buzz.play()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_page_up"):
+		task_skip()
 
 func _on_break_ended() -> void:
 	if current_task_obj:

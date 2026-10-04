@@ -32,6 +32,10 @@ func _on_start_pressed() -> void:
 	dialog.current_dir = last_save_path + "/"
 	dialog.popup_centered_ratio()
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_page_down"):
+		return_menu()
+
 func _on_dir_selected_load(path: String) -> Error:
 	test_data.load_from_file(path)
 	

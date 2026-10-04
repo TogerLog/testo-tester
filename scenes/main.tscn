@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://csbqds2jjgrnl" path="res://sprites/exit.png" id="3_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://tjp4sq4w335q" path="res://sprites/exitPress.png" id="4_tipki"]
 [ext_resource type="LabelSettings" uid="uid://cyp06wh4u08e2" path="res://resources/text.tres" id="5_85g3d"]
+[ext_resource type="Texture2D" uid="uid://gnobs4skdxsi" path="res://sprites/next.png" id="5_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b4qhhfpy6ki0l" path="res://sprites/nextPress.png" id="6_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dubsdwgouo6mi" path="res://scenes/controller.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://db4my1v74tcjx" path="res://scripts/task_data.gd" id="7_tipki"]
 [ext_resource type="Script" uid="uid://c6dotxdwo3cqc" path="res://scripts/Test.gd" id="14_dp3eg"]
@@ -79,12 +81,29 @@ texture_pressed = ExtResource("4_tipki")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="SkipButton" type="TextureButton" parent="Quiz/TOP/TopPanel" unique_id=367405704]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 126.5
+offset_top = -48.5
+offset_right = 206.5
+offset_bottom = 31.5
+grow_vertical = 2
+texture_normal = ExtResource("5_a8y0u")
+texture_pressed = ExtResource("6_jkv2x")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="MainLabel" type="Label" parent="Quiz/TOP/TopPanel" unique_id=555534191]
 custom_minimum_size = Vector2(-1, -1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 86.0
+offset_right = 86.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -195,5 +214,6 @@ label_settings = ExtResource("20_yc10j")
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Quiz/TOP/TopPanel/ExitButton" to="MainMenu" method="return_menu"]
+[connection signal="pressed" from="Quiz/TOP/TopPanel/SkipButton" to="Quiz/CONTROLLER" method="task_skip"]
 [connection signal="pressed" from="MainMenu/SimpleButton" to="MainMenu" method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/SimpleButton2" to="MainMenu" method="_on_creator_pressed"]
