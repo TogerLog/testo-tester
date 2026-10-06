@@ -49,7 +49,7 @@ func _on_load_image_pressed() -> void:
 	dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
 	dialog.access = FileDialog.ACCESS_FILESYSTEM
 	dialog.filters = PackedStringArray([
-        "*.png ; Файлы изображения"
+        "*.png, *.jpeg, *.jpg, *.webp, *.svg ; Файлы изображения"
 	])
 	dialog.use_native_dialog = true
 	dialog.file_selected.connect(_on_dir_selected_load)
@@ -59,12 +59,9 @@ func _on_load_image_pressed() -> void:
 	dialog.popup_centered_ratio()
 
 func _on_dir_selected_load(path: String) -> void:
-	var bytes: PackedByteArray = FileAccess.get_file_as_bytes(path)
-	if bytes.size() == 0:
-		return
 	var new_image = Image.new()
-	var err = new_image.load_png_from_buffer(bytes)
-	if err != OK:
+	new_image = Image.load_from_file(path)
+	if new_image.is_empty():
 		return
 	file_path = path
 	image.texture = ImageTexture.create_from_image(new_image)
