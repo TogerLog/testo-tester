@@ -16,8 +16,13 @@ global_settings = ExtResource("3_q68jb")
 theme = ExtResource("1_b1cmn")
 
 [node name="Panel" type="Panel" parent="." unique_id=2114803714]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_b1cmn")
 
 [node name="Control" type="Control" parent="Panel" unique_id=1241016698]

@@ -3,6 +3,7 @@ class_name SpotTaskDataUI
 
 @export var choose_image: ImageExplorer
 @export var questioner: TextEdit
+@export var answerer: LineEdit
 @export var spots: UIArraySpots
 @export var main_container: Control
 @export var configurator_prefab: PackedScene
@@ -26,6 +27,8 @@ func load_task_data(new_task_data: TaskData):
 	choose_image.id_updated.connect(image_updated)
 	spots.ui_data = self
 	spots.load_data(spot_task_data.spots, test_data)
+	questioner.text = spot_task_data.question
+	answerer.text = spot_task_data.answer
 
 func image_updated(image_index: String):
 	spot_task_data.image_id = image_index

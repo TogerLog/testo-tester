@@ -119,12 +119,9 @@ func _on_save_pressed() -> void:
 	add_child(dialog)
 	if last_save_path != "NULL":
 		dialog.current_path = last_save_path + "/"
-	print_debug("hmm")
 	if test_data.name != null:
-		print_debug("hmm???")
 		dialog.current_file = test_data.name + ".test"
 	else:
-		print_debug("hmm??????")
 		dialog.current_file = "безымянный.test"
 	dialog.popup_centered_ratio()
 

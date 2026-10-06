@@ -32,10 +32,10 @@ func texture_spot(index: int):
 		spots[index].texture_disabled = spot_failed
 
 func correct_spot(index: int):
-	spots[index].position = image.size * ((spot_data[index] as Spot).position - Vector2(0.5,0.5)) - spots[index].size / 2
 	spots[index].scale = Vector2.ONE * (spot_data[index] as Spot).scale
 	var smallest_size: float = min(image.size.x,image.size.y)
 	spots[index].size = Vector2.ONE * smallest_size / 10
+	spots[index].position = image.size * ((spot_data[index] as Spot).position - Vector2(0.5,0.5)) - spots[index].size / 2
 
 func correct_image_pos_size():
 	var big_square: Vector2 = image.size
