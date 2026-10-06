@@ -20,6 +20,7 @@ theme = ExtResource("1_3p8ty")
 script = ExtResource("1_6f5mt")
 image = NodePath("TextureRect")
 button = NodePath("MenuButton")
+no_image = ExtResource("2_6f5mt")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1606659246]
 layout_mode = 2

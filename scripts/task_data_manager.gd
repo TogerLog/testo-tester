@@ -3,7 +3,6 @@ extends Node
 var type_constructors: Dictionary[String,Callable]
 @export var type_conf_constructors: Dictionary[String,PackedScene]
 @export var type_task_constructors: Dictionary[String,PackedScene]
-@export var type_label: Dictionary[String, String]
 @export var type_description: Dictionary[String, String]
 @export var type_id: Array[String]
 
@@ -38,10 +37,6 @@ func get_description(type: String):
 		return type_description[type]
 	return type_description["NONE"]
 
-func get_label(type: String):
-	if type_label.has(type):
-		return type_label[type]
-	return type_label["NONE"]
 
 func add_type(type: String, function: Callable):
 	type_constructors[type] = function

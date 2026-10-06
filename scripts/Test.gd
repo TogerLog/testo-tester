@@ -13,6 +13,8 @@ class_name TestData
 @export var threshold_percent: float = 0.5
 @export var max_mistake: int = 3
 @export var images: Array[String] 
+@export var background: String
+var background_texture: Texture2D
 var image_textures: Dictionary[String,Texture2D]
 var no_image: Texture2D = load("res://sprites/no image.png")
 
@@ -38,6 +40,7 @@ func load_textures(reader: ZIPReader) -> void:
 			else:
 				task.loaded_images[id] = no_image
 		task.update_images(no_image)
+	background_texture = image_textures.get(background,null)
 
 func load_from_dict(dict: Dictionary):
 	tasks.clear()
@@ -55,6 +58,7 @@ func load_from_dict(dict: Dictionary):
 	threshold = dict["threshold"]
 	threshold_percent = dict["threshold_percent"]
 	max_mistake = dict["max_mistake"]
+	background = dict.get("background", background)
 	images.assign(dict["images"])
 
 func to_dict():
@@ -73,6 +77,7 @@ func to_dict():
 		"threshold_percent": threshold_percent,
 		"max_mistake": max_mistake,
 		"name": name,
+		"background": background,
 		"images": images
 	}
 

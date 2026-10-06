@@ -7,6 +7,8 @@ class_name ImageExplorer
 @export var id: String
 @export var file_path: String
 @export var last_path: String
+@export var include_no_image: bool = false
+@export var no_image: Texture2D
 
 @export var images: Dictionary[String, Texture2D]
 
@@ -26,7 +28,10 @@ func about_to_popup() -> void:
 	_popup.clear()
 	for key in images.keys():
 		_popup.add_item(key)
-		_popup.set_item_icon(_popup.item_count - 1, images[key])
+		if images[key] != null:
+			_popup.set_item_icon(_popup.item_count - 1, images[key])
+	if include_no_image:
+		_popup.add_item("[БЕЗ ИЗОБРАЖЕНИЯ]")
 	_popup.add_item("Новое изображение...")
 
 func update_image(index: String) -> void:
@@ -41,8 +46,12 @@ func popup(index: int) -> void:
 		id = ids[index]
 		update_image(id)
 	else:
-		_on_load_image_pressed()
-		return
+		if include_no_image && index == button.get_popup().item_count - 2:
+			id_updated.emit("[БЕЗ ИЗОБРАЖЕНИЯ]")
+			button.text = "[БЕЗ ИЗОБРАЖЕНИЯ]"
+			image.texture = no_image
+		else:
+			_on_load_image_pressed()
 
 func _on_load_image_pressed() -> void:
 	var dialog = FileDialog.new()

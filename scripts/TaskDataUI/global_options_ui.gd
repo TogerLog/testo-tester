@@ -11,6 +11,7 @@ class_name TestSettingsUI
 @export var threshold_: SpinBox
 @export var threshold_percent_: SpinBox # /100
 @export var max_mistake_: SpinBox
+@export var background_image_: ImageExplorer
 
 @export var use_percent_vis: Control
 @export var threshold_vis: Control
@@ -33,6 +34,7 @@ func load_data(new_test_data: TestData):
 	threshold_.value = test_data.threshold
 	threshold_percent_.value = test_data.threshold_percent * 100
 	max_mistake_.value = test_data.max_mistake
+	background_image_.load_data(test_data,test_data.background)
 	update_disabler()
 	update_score_sys()
 
@@ -88,3 +90,7 @@ func _on_max_mistakes_value_changed(value: float) -> void:
 
 func _on_name_text_submitted(new_text: String) -> void:
 	test_data.name = new_text
+
+
+func _on_background_image_id_updated(image_index: String) -> void:
+	test_data.background = image_index

@@ -44,15 +44,6 @@ type_task_constructors = Dictionary[String, PackedScene]({
 "QuestionTask": ExtResource("4_o2gjg"),
 "SpotTask": ExtResource("9_yhj2p")
 })
-type_label = Dictionary[String, String]({
-"ChronoTask": "Задание с последовательностью",
-"EndTask": "Тест завершён",
-"ImageTask": "Задание с изображением",
-"LineTask": "Задание на соответствие",
-"NONE": "ТИП ЗАДАНИЯ НЕ НАСТРОЕН",
-"QuestionTask": "Задание с вопросом",
-"SpotTask": "Задание с областью"
-})
 type_description = Dictionary[String, String]({
 "ChronoTask": "Задание на последовательность",
 "ChronoTaskConfigured": "ГЕНЕРАТОР Задании на последовательность",

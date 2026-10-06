@@ -18,6 +18,8 @@ class_name Controller
 @export var score_label: Label
 @export var task_label: Label
 
+@export var background: TextureRect
+
 @export var timer: Timer
 
 @export var points: int = -1
@@ -46,6 +48,9 @@ func load_new_data(new_test_data: TestData):
 		if child.get_index() > 3:
 			child.queue_free()
 	test_data = new_test_data
+	
+	main_label.text = test_data.name
+	background.texture = test_data.background_texture
 	
 	tasks.clear()
 	
@@ -88,7 +93,6 @@ func iterate_tasks() -> void:
 	var current_task: TaskData = tasks[taskCounter - 1]
 	var type: String = tasks[taskCounter - 1].type
 	var task_obj: Task = TaskDataManager.create_task_ui(type) as Task
-	main_label.text = TaskDataManager.get_label(type)
 	
 	add_child(task_obj)
 	
